@@ -72,11 +72,13 @@ public class HHH5855ListChildrenDuplicatesTest {
 		Parent parent = transactionTemplate.execute(new TransactionCallback<Parent>() {
 			@Override
 			public Parent doInTransaction(TransactionStatus transactionStatus) {
-				Parent parent = loadParent(parentId);
+				Parent parent = loadParent(parentId);					
 				Child child1 = new Child();
 				child1.setName("child1");
+				child1.setParent(parent);
 				Child child2 = new Child();
 				child2.setName("child2");
+				child2.setParent(parent);
 				parent.addChild(child1);
 				parent.addChild(child2);
 				entityManager.merge(parent);
