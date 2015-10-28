@@ -1,4 +1,7 @@
 # HHH-5855
+
+[![Build Status](https://travis-ci.org/mpostelnicu/hhh-5855.svg?branch=master)](https://travis-ci.org/mpostelnicu/hhh-5855)
+
 Hibernate Bug HHH-5855 Test Case
 
 This project provides a test case that reproduces the bug HHH-5855 on Hibernate 5.0.2.Final (30-Sep-2015).
