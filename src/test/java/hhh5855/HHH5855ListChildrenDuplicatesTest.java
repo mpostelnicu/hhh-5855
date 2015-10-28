@@ -43,7 +43,7 @@ import hhh5855.model.Parent;
  *      hibernate-facts/src/test/java/com/vladmihalcea/HibernateBagDuplicateTest
  *      .java
  * 
- *      Hibernate 4.3.11.Final bug test case HHH-5855: "The method "merge
+ *      Hibernate 5.0.2.Final bug test case HHH-5855: "The method "merge
  *      " from the EntityManager causes a duplicated "insert" of a child entity"
  * 
  * @see https://hibernate.atlassian.net/browse/HHH-5855
