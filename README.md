@@ -21,3 +21,5 @@ For more info see Vlad Mihalcea's blog post and github page:
 http://vladmihalcea.com/2013/10/16/hibernate-facts-favoring-sets-vs-bags/
 
 https://github.com/vladmihalcea/vladmihalcea.wordpress.com
+
+This bug has finally been resolved in Hibernate 5.0.8! Thank you Hibernate team ! 
