@@ -18,20 +18,29 @@ package hhh5855.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderColumn;
+import javax.persistence.Table;
+import org.hibernate.envers.Audited;
 
 @Entity
+@Audited
+@Table(name = "parents")
 public class Parent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @ManyToMany
+    @OrderColumn(name="index")
+    private List<ManyChild> manyChildren = new ArrayList<ManyChild>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "parent", orphanRemoval = true)
     private List<Child> children = new ArrayList<Child>();
@@ -59,5 +68,13 @@ public class Parent {
     public void removeChild(Child child) {
         children.remove(child);
         child.setParent(null);
+    }
+
+    public List<ManyChild> getManyChildren() {
+        return manyChildren;
+    }
+
+    public void setManyChildren(List<ManyChild> manyChildren) {
+        this.manyChildren = manyChildren;
     }
 }

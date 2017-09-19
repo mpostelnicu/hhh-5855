@@ -20,12 +20,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import org.hibernate.envers.Audited;
 
 @Entity
 @Audited
-public class Child {
+public class ManyChild {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,10 +32,7 @@ public class Child {
 
     private String name;
 
-    @ManyToOne
-    private Parent parent;
-
-    public Child() {
+    public ManyChild() {
     }
 
     public Long getId() {
@@ -51,11 +47,4 @@ public class Child {
         this.name = name;
     }
 
-    public Parent getParent() {
-        return parent;
-    }
-
-    public void setParent(Parent parent) {
-        this.parent = parent;
-    }
 }
